@@ -1,0 +1,27 @@
+{
+  "name": "irc.jquery.org",
+  "title": "jQuery IRC Logs and Guide",
+  "description": "Information about using the jQuery Foundation's IRC channels and links to IRC logs",
+  "version": "1.2.2",
+  "homepage": "http://irc.jquery.org",
+  "author": {
+    "name": "jQuery Foundation and other contributors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery/irc.jquery.org.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jquery/irc.jquery.org/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jquery/irc.jquery.org/blob/master/LICENSE.txt"
+    }
+  ],
+  "dependencies": {
+    "grunt": "0.4.5",
+    "grunt-jquery-content": "3.0.1"
+  }
+}

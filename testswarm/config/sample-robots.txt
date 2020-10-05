@@ -1,0 +1,7 @@
+# https://github.com/jquery/testswarm/issues/146
+
+User-agent: *
+Disallow: /client/
+Disallow: /result/
+Disallow: /*.php
+Disallow: /*?*

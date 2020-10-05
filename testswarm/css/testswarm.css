@@ -1,0 +1,529 @@
+@-o-keyframes rotate {
+	from {
+		-o-transform: rotate(0deg);
+	}
+	to {
+		-o-transform: rotate(360deg);
+	}
+}
+@-ms-keyframes rotate {
+	from {
+		-ms-transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes rotate {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Make tables spaced out a bit more */
+h2 + table,
+h3 + table,
+h4 + table,
+h2 + .row {
+  margin-top: 5px;
+}
+
+.swarm-code-nowrap {
+	white-space: nowrap;
+}
+
+.swarm-toollinks {
+	text-align: right;
+}
+
+.well-swarm-icon {
+	position: relative;
+	padding: 9px;
+	text-align: center;
+}
+
+.well-swarm-icon .swarm-onlineclients {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	line-height: normal;
+}
+
+.well-swarm-icon .swarm-icon {
+	margin-top: 10px;
+	margin-bottom: 7px;
+}
+
+.swarm-browsername:hover {
+	cursor: default;
+}
+
+.swarm-browsername {
+	/* Inline bubble with line breaks */
+	display: inline-block;
+}
+
+.swarm-results-browsername {
+	font-size: 75%;
+	font-weight: normal;
+	color: #888;
+}
+
+/**
+ * Results table.
+ * The swarm-status colors are now all derived from the following greens:
+ * #DBEFD7 (bg) / #468847 (text). The derived colors are calculated using
+ * HSL, and for clarity I've included those so that it's easy to update the
+ * saturation/lightness later. However due to browser support I the CSS
+ * properties are set to the HEX verions.
+ *
+ * background: hsl(H.., 44%, 89%)
+ *                           color: hsl(H.., 32%, 40%)
+ * -
+ * new:        hsl(0,   0%,  91%) / hsl(0,   0%,  40%)
+ * progress:   hsl(49,  44%, 89%) / hsl(49,  32%, 40%)
+ * passed:     hsl(110, 44%, 89%) / hsl(110, 32%, 40%)
+ * failure, timedout
+ * and error:  hsl(0,   44%, 89%) / hsl(0,   32%, 40%)
+ */
+
+.swarm-pagination {
+	overflow: hidden;
+}
+
+.swarm-pagination-prev {
+	cursor: pointer;
+	float: left;
+}
+.swarm-pagination-next {
+	cursor: pointer;
+	float: right;
+}
+
+.swarm-pagination-disabled {
+	cursor: default;
+	color: #888;
+}
+
+.swarm-results,
+.table th {
+	white-space: nowrap;
+}
+
+/**
+ * Clients page.
+ */
+
+.swarm-client {
+	position: relative;
+}
+
+.swarm-client-icon {
+	position: absolute;
+	left: -20px;
+	top: -25px;
+}
+
+.swarm-client-title {
+	text-align: center;
+}
+
+.swarm-client-info {
+	margin-left: 40px
+}
+
+.swarm-client .table {
+	margin-bottom: 0;
+}
+
+
+/**
+ * Job page.
+ */
+.swarm-results-unbound-auth .swarm-reset-run-single {
+	display: none;
+}
+
+/**
+ * Some of Bootstrap's table styling
+ * have a lot of weight on their selector,
+ * such as:
+ *     .table-striped tbody tr:nth-child(odd) td { background-color: #f9f9f9; }
+ * Putting .swarm-status on that (with the right background color) would require
+ * a lot of specificity. So, instead, we allow the status to be in a child <div>
+ * or the table cell. In that case though, we need to transfer the inner padding
+ * from the bootstrap class (.table) cell to ours.
+ */
+.table .swarm-status-cell {
+	padding: 0;
+}
+
+/* Projects page. */
+.swarm-jobstatus-cell .swarm-status [class^="icon-"] {
+	float: right;
+}
+
+.swarm-status {
+	padding: 8px;
+	line-height: 21px;
+}
+
+/* Align show-results button to the right inside a table cell using
+  absolute position, instead of float. Because float causes it to wrap
+  when the table gets right. */
+.swarm-results .swarm-status {
+	position: relative;
+	/* Account for swarm-show-results icon (14px) */
+	padding: 8px 22px 8px 8px;
+}
+
+.swarm-show-results {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+}
+
+.swarm-results thead th,
+.swarm-status {
+	vertical-align: top;
+	background: #fff;
+	font-weight: bold;
+}
+
+.swarm-results thead th,
+.table .swarm-status, /* override Bootstrap .table text-align */
+.swarm-status {
+	text-align: center;
+}
+
+.swarm-status [class*=" icon-"] {
+	opacity: .3;
+	margin-left: 7px;
+}
+
+.swarm-status:hover [class*=" icon-"] {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.swarm-status-new,
+.swarm-status-lost {
+	background: #E8E8E8;
+}
+.swarm-status-new,
+.swarm-status-new a {
+	color: #666;
+}
+
+.swarm-status-progress {
+	background: #EFEBD7;
+}
+
+.swarm-status-progress,
+.swarm-status-progress a {
+	color: #877B45;
+}
+
+.swarm-status-passed {
+	background: #DBEFD7;
+}
+.swarm-status-passed,
+.swarm-status-passed a {
+	color: #508745;
+}
+
+.swarm-status-timedout,
+.swarm-status-error,
+.swarm-status-failed {
+	background: #EFD7D7;
+}
+
+.swarm-status-timedout,
+.swarm-status-timedout a,
+.swarm-status-error,
+.swarm-status-error a,
+.swarm-status-failed,
+.swarm-status-failed a {
+	color: #874545;
+}
+
+.swarm-status-notscheduled {
+	background: #fff;
+}
+
+.swarm-result-date {
+	padding: 0 0 0 0.7em;
+	font-weight: normal;
+	font-size: smaller;
+	color: #888;
+}
+
+.swarm-status-progressicon {
+	-o-animation-name: rotate;
+	-o-animation-direction: normal;
+	-o-animation-duration: 2s;
+	-o-animation-timing-function: linear;
+	-o-animation-iteration-count: infinite;
+
+	-ms-animation-name: rotate;
+	-ms-animation-direction: normal;
+	-ms-animation-duration: 2s;
+	-ms-animation-timing-function: linear;
+	-ms-animation-iteration-count: infinite;
+
+	-moz-animation-name: rotate;
+	-moz-animation-direction: normal;
+	-moz-animation-duration: 2s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+
+	-webkit-animation-name: rotate;
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+
+	animation-name: rotate;
+	animation-direction: normal;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.swarm-item-actions {
+	text-align: right;
+}
+
+.swarm-page-footer {
+	text-align: center;
+	margin-bottom: 18px;
+}
+
+.swarm-arrow-up {
+	display: inline-block;
+	content: "";
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid #000;
+}
+
+.swarm-arrow-down {
+	display: inline-block;
+	content: "";
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #000;
+}
+
+.swarm-arrow-muted {
+	position: relative;
+	display: inline-block;
+	content: "";
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid #999;
+}
+
+.swarm-arrow-muted::after {
+	position: absolute;
+	top: 5px;
+	left: -4px;
+	display: inline-block;
+	content: "";
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #999;
+}
+
+.swarm-toggle > .swarm-arrow-up,
+.swarm-toggle > .swarm-arrow-down,
+.swarm-toggle > .swarm-arrow-muted {
+	margin: 8px 2px 2px 2px;
+}
+
+.js .swarm-toggle {
+	cursor: pointer;
+}
+
+.no-js .swarm-arrow-up,
+.no-js .swarm-arrow-down,
+.no-js .swarm-arrow-muted {
+	display: none;
+}
+
+/* ApiDebugPage */
+.swarm-columns {
+	column-width: 25em;
+}
+
+/**
+ * UA icons.
+ * Display device or browser, and os.
+ */
+
+.swarm-icon {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	background: url(../img/browser-unknown.png) 50% 50% no-repeat;
+	background-size: contain;
+}
+
+.swarm-browser-android {
+	background-image: url(../img/browser-android.png);
+}
+
+.swarm-browser-chrome,
+.swarm-browser-chrome_mobile {
+	background-image: url(../img/browser-chrome.png);
+}
+
+.swarm-browser-chromium {
+	background-image: url(../img/browser-chromium.png);
+}
+
+.swarm-browser-firefox,
+.swarm-browser-firefox_mobile {
+	background-image: url(../img/browser-firefox.png);
+}
+
+/* IE9+ */
+.swarm-browser-ie {
+	background-image: url(../img/browser-ie.png);
+}
+
+.swarm-browser-ie-6 {
+	background-image: url(../img/browser-ie-6.png);
+}
+
+/* IE7/IE8 have the same logo */
+.swarm-browser-ie-7,
+.swarm-browser-ie-8 {
+	background-image: url(../img/browser-ie-8.png);
+}
+
+/* Chromium-based Edge (v79+) */
+.swarm-browser-edge {
+	background-image: url(../img/browser-edge.png);
+}
+
+/* Edge 12-18 are legacy, EdgeHTML-based & have a different logo */
+.swarm-browser-edge-12,
+.swarm-browser-edge-13,
+.swarm-browser-edge-14,
+.swarm-browser-edge-15,
+.swarm-browser-edge-16,
+.swarm-browser-edge-17,
+.swarm-browser-edge-18 {
+	background-image: url(../img/browser-edge-legacy.png);
+}
+
+.swarm-browser-opera,
+.swarm-browser-opera_mini,
+.swarm-browser-opera_mobile {
+	background-image: url(../img/browser-opera.png);
+}
+
+.swarm-browser-safari,
+.swarm-browser-mobile_safari {
+	background-image: url(../img/browser-safari.png);
+}
+
+.swarm-browser-webkit_nightly {
+	background-image: url(../img/browser-webkit_nightly.png);
+}
+
+.swarm-browser-yandex_browser {
+	background-image: url(../img/browser-yandex.png);
+}
+
+.swarm-device-ipad {
+	background-image: url(../img/device-ipad.png);
+}
+
+.swarm-device-iphone {
+	background-image: url(../img/device-iphone.png);
+}
+
+.swarm-os::after {
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	content: "";
+	display: block;
+	width: 50%;
+	height: 50%;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 7px solid transparent;
+	background: rgba(255, 255, 255, 0.85) 49% 50% no-repeat;
+	background-size: contain;
+}
+
+.swarm-os-android::after {
+	background-image: url(../img/os-android.png);
+}
+
+.swarm-os-ios::after {
+	background-image: url(../img/os-ios.png);
+}
+
+.swarm-os-mac_os_x::after {
+	background-image: url(../img/os-macosx.png);
+}
+
+.swarm-os-windows::after,
+.swarm-os-windows-xp::after {
+	background-image: url(../img/os-winxp.png);
+}
+
+.swarm-os-windows-vista::after,
+.swarm-os-windows-7::after {
+	background-image: url(../img/os-win7.png);
+}
+
+.swarm-os-windows-8::after,
+.swarm-os-windows-10::after {
+	background-image: url(../img/os-win8.png);
+}
+
+.swarm-icon-small {
+	max-width: 36px;
+	max-height: 36px;
+}
+
+.swarm-icon-small.swarm-os::after {
+	border-width: 3px;
+}

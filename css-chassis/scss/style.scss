@@ -1,0 +1,11 @@
+/*
+* ==========================================================================
+* CSS Chassis
+*
+* This adds normalize.css to the build see lint.scss for expanation
+* ==========================================================================
+*/
+
+@import
+	"external/normalize.css/normalize",
+	"scss/lint";

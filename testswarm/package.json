@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "node test/pretty.js && jshint ."
+  },
+  "devDependencies": {
+    "jshint": "2.9.7",
+    "timekeeper": "1.0.0"
+  }
+}

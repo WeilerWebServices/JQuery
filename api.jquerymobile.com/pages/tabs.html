@@ -1,0 +1,69 @@
+<script>{
+	"title": "Tabs Widget",
+	"added": "1.4",
+	"excerpt": "A single content area with multiple panels, each associated with a header in a list.",
+	"termSlugs": {
+		"category": [ "widgets" ]
+	}
+}</script>
+
+<h2 id="introduction">Tabs</h2>
+<p>The jQuery UI tabs widget is bundled unchanged with jQuery Mobile. Thus, its <a href="//api.jqueryui.com/tabs/">API documentation</a> fully describes its functionality.</p>
+<h2 id="options-and-autoinit">Options and autoinitialization</h2>
+<p>When used with jQuery Mobile's autoinitialization features, the options documented on the widget's API documentation page can also be provided as <code>data-*</code> attributes in the markup. You can add the <code>data-role="tabs"</code> attribute to your tabs widget markup to indicate that the element is to be turned into a tabs widget.</p>
+<h2 id="ajax">Ajax considerations</h2>
+<p>jQuery Mobile provides an extension to the tabs widget (<code>tabs.ajax</code>). The extension provides no new API, however, it modifies the way in which the widget evaluates whether displaying the content referred to by the <code>href</code> attributes of the links that play the role of tabs requires retrieval via Ajax. It is necessary to include this extension if your project consists of multiple external jQuery Mobile pages, one of which features a tabs widget.</p>
+<div class="warning"><b>Note:</b> Use of links to open popup's and panels is not currently recommended in conjunction with the tabs widget. Clicking these links will remove the active state style of the selected tab.</div>
+<section class="entry-examples" id="entry-examples">
+	<header><h2>Example:</h2></header>
+	<div class="entry-example" id="example-0">
+		<h4><span class="desc">A basic example of tabs.</span></h4>
+
+<pre><code data-linenum="true">
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>collapsible demo</title>
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="page1">
+	<div data-role="header">
+		<h1>jQuery Mobile Example</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#fragment-1" class="ui-btn-active">One</a></li>
+					<li><a href="#fragment-2">Two</a></li>
+					<li><a href="#fragment-3">Three</a></li>
+				</ul>
+			</div>
+			<div id="fragment-1">
+				<p>This is the content of the tab 'One', with the id fragment-1.</p>
+			</div>
+			<div id="fragment-2">
+				<p>This is the content of the tab 'Two', with the id fragment-2.</p>
+			</div>
+			<div id="fragment-3">
+				<p>This is the content of the tab 'Three', with the id fragment-3.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
+</code></pre>
+
+		<h4>Demo:</h4>
+		<div class="demo code-demo"></div>
+
+	</div>
+</section>

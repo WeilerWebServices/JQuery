@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entries2html.xsl" ?>
+<entry name="button" type="widget" widgetnamespace="mobile" event-prefix="button" init-selector="input[type='button'], input[type='submit'], input[type='reset']">
+	<title>Button Widget</title>
+    <desc>Creates a button widget</desc>
+	<longdesc>
+		<p>The jQuery UI button widget is bundled in jQuery Mobile with some changes. Thus, its <a href="//api.jqueryui.com/button/">API documentation</a> fully describes its functionality.</p>
+	</longdesc>
+	<added>1.0</added>
+	<options>
+		<option name="corners" default="true" example-value="false">
+			<desc>Applies the theme button border-radius if set to true.
+				<p>This option is also exposed as a data attribute: <code>data-corners="false"</code>.</p>
+				<xi:include href="../includes/widget-option-deprecation-1.6.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+			</desc>
+			<type name="Boolean" />
+		</option>
+		<xi:include href="../includes/widget-option-enhanced.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<option name="icon" default="null" example-value='"star"'>
+			<desc>Applies an icon from the icon set.
+				<p>The <a href="/buttonMarkup/">.buttonMarkup()</a> documentation contains a reference of all the icons available in the default theme.</p>
+				<p>This option is also exposed as a data attribute: <code>data-icon="star"</code>.</p>
+			</desc>
+			<type name="String" />
+		</option>
+		<option name="iconpos" default='"left"'>
+			<desc>Positions the icon in the <placeholder name="name"/>. Possible values: left, right, top, bottom, none, notext. The notext value will display an icon-only <placeholder name="name"/> with no text feedback.
+				<p>This option is also exposed as a data attribute: <code>data-iconpos="right"</code>.</p>
+			<xi:include href="../includes/widget-option-deprecation-1.6.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+			</desc>
+			<type name="String" />
+		</option>
+		<xi:include href="../includes/widget-option-initSelector.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<option name="inline" default="null (false)">
+			<desc>If set to <code>true</code>, this will make the <placeholder name="name"/> act like an inline <placeholder name="name"/> so the width is determined by the <placeholder name="name"/>'s text. By default, this is null (false) so the <placeholder name="name"/> is full width, regardless of the feedback content. Possible values: true, false.
+				<p>This option is also exposed as a data attribute: <code>data-inline="true"</code>.</p>
+				<xi:include href="../includes/widget-option-deprecation-1.6.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+			</desc>
+			<type name="Boolean" />
+		</option>
+		<xi:include href="../includes/widget-option-mini.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<option name="shadow" default="true">
+			<desc>Applies the drop shadow style to the <placeholder name="name"/> if set to true.
+				<p>This option is also exposed as a data attribute: <code>data-shadow="false"</code>.</p>
+				<xi:include href="../includes/widget-option-deprecation-1.6.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+			</desc>
+			<type name="Boolean" />
+		</option>
+		<xi:include href="../includes/widget-option-theme.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<option name="wrapperClass" default="null">
+			<desc>Allows you to specify CSS classes to be set on the <placeholder name="name"/>'s wrapper element.
+				<p>This option is also exposed as a data attribute: <code>data-wrapper-class="custom-class"</code>.</p>
+				<xi:include href="../includes/widget-option-deprecation-1.6.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+			</desc>
+			<type name="String" />
+		</option>
+	</options>
+	<category slug="widgets"/>
+</entry>

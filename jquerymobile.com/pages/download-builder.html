@@ -1,0 +1,33 @@
+<script>{
+	"title": "jQuery Mobile Download Builder"
+}</script>
+<link rel="stylesheet" href="../resources/builder/builder.css">
+<script src="../resources/builder/builder.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+
+<p>Customize your jQuery Mobile download by selecting the specific modules you need in the form below. For standard configurations, <a href="/download">download or link to CDN versions</a> of pre-built packages. Please note that the jQuery Mobile Download Builder is still in alpha, and as such should <em>not</em> be used on production websites.</p>
+<p>Please report any issues you might find in the <a href="https://github.com/jquery/jquerymobile.com/issues">issue tracker</a>, and thanks!</p>
+
+<div class="branches">
+	<label for="branch" class="select-branch">Select branch</label>
+	<select id="branch" name="branch">
+		<optgroup label="Stable">
+		<option value="1.4.5" selected>1.4.5</option>
+		<option value="1.4.4">1.4.4</option>
+		<option value="1.4.3">1.4.3</option>
+		<option value="1.3.2">1.3.2</option>
+		<option value="1.2.1">1.2.1</option>
+		<option value="1.1.2">1.1.2</option>
+		</optgroup><optgroup label="Unstable">
+		<option value="1.5.0-rc1">1.5.0-rc1</option>
+		<option value="1.5.0-alpha.1">1.5.0-alpha.1</option>
+		<option value="master">Latest</option>
+	</optgroup></select>
+</div>
+
+<form name="builder" id="builder" class="builder loading" method="post"></form>
+
+<p class="intro">Notes: The zip download doesn't contain the icon and loader images, please download the <a id="imageBundleLink">images</a> and drop that into your
+  folder structure. </p>
+
+<div id="download"></div>

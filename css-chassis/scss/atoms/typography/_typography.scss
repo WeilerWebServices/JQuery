@@ -1,0 +1,116 @@
+/*
+* ==========================================================================
+* Typography
+* ==========================================================================
+*/
+
+@import
+	"dist/chassis",
+	"functions",
+	"mixins";
+
+body {
+	font: $typography-normal #{ map-get( $typography-font-default, font-size ) }/1.5 $typography-sans;
+
+	@media ( max-width: $breakpoints-viewport-md-min ) {
+		font-size: 16px;
+	}
+	@media ( max-width: $breakpoints-viewport-sm-min ) {
+		font-size: 14px;
+	}
+}
+
+h1 {
+	@include heading($typography-h1);
+}
+
+h2 {
+	@include heading($typography-h2);
+}
+
+h3 {
+	@include heading($typography-h3);
+}
+
+h4 {
+	@include heading($typography-h4);
+}
+
+h5 {
+	@include heading($typography-h5);
+}
+
+h6 {
+	@include heading($typography-h6);
+}
+
+/*
+* ==========================================================================
+* Block elements
+* ==========================================================================
+*/
+
+hr {
+	border: 0;
+	border-bottom: map-get($typography-hr, thickness) map-get($typography-hr, style) map-get($typography-hr, color);
+}
+
+blockquote {
+	margin: 0;
+	padding-left: map-get($typography-blockquote,padding-left); //TODO consider all padding variables
+	position: relative;
+	border-left: map-get($typography-blockquote,border);
+	font-style: map-get($typography-blockquote,font-style);
+}
+
+pre {
+	padding: 16px 20px;
+	background: map-get($typography-pre,background);
+	font: normal 12px/1.4 $typography-monospace;
+}
+
+/*
+* ==========================================================================
+* Lists
+* ==========================================================================
+*/
+
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin: 0;
+}
+
+/*
+* ==========================================================================
+* Inline elements
+* ==========================================================================
+*/
+
+a {
+	@include link($typography-link);
+	&:visited {
+		@include link($typography-link-visited);
+	}
+	&:active,
+	&:focus {
+		@include link($typography-link-focus);
+	}
+	&:hover {
+		@include link($typography-link-hover);
+	}
+}
+
+b,
+strong {
+	font-weight: $typography-bold;
+}
+
+code {
+	background: map-get($typography-code,background);
+	font-size: em( 16px );
+	padding: em( 4px, 16px ) em( 8px, 16px );
+	border-radius: map-get($typography-code,border-radius);
+}

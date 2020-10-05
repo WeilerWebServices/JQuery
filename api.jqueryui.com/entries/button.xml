@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<entry name="button" type="widget" widget-element="element visually representing the button">
+	<title>Button Widget</title>
+	<desc>Themeable buttons.</desc>
+	<longdesc>
+		<p>Button enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.</p>
+
+		<p>When using an input of type button, submit or reset, support is limited to plain text labels with no icons.</p>
+
+		<p class="warning">Note: The button widget was rewritten in 1.12. Some options changed, you can find documentation for the old options in the <a href="/1.11/button/">1.11 button docs</a>. This widget used to bundle support for inputs of type radio and checkbox, this is now deprecated, use the <a href="/checkboxradio/">checkboxradio widget</a> instead. It also used to bundle the buttonset widget, this is also deprecated, use the <a href="/controlgroup/">controlgroup widget</a> instead.</p>
+
+		<xi:include href="../includes/widget-theming.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+		<ul>
+			<li>
+				<code>ui-button</code>: The DOM element that represents the button. This element will additionally have the <code>ui-button-icon-only</code> class, depending on the <a href="#option-showLabel">showLabel</a> and <a href="#option-icon">icon</a> options.
+				<ul>
+					<li>
+						<code>ui-button-icon</code>: The element used to display the button icon. This will only be present if an icon is provided in the <a href="#option-icon">icon</a> option.
+					</li>
+					<li>
+						<code>ui-button-icon-space</code>: A separator element between icon and text content of the button. This will only be present if an icon is provided in the <a href="#option-icon">icon</a> option and the <a href="#option-iconPosition">iconPosition</a> option is set to <code>"beginning"</code> or <code>"end"</code>.
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Dependencies</h3>
+		<ul>
+			<li><a href="/jQuery.ui.keyCode/">jQuery.ui.keyCode</a></li>
+			<li><a href="/jQuery.widget/">Widget Factory</a></li>
+		</ul>
+	</longdesc>
+	<note id="functional-css"/>
+	<added>1.8, rewritten: 1.12</added>
+	<options>
+		<option name="classes" type="Object">
+			<default>{
+	"ui-button": "ui-corner-all",
+}</default>
+			<xi:include href="../includes/classes-option-desc.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+			<xi:include href="../includes/classes-option-example.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		</option>
+		<xi:include href="../includes/widget-option-disabled.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<option name="icon" default="null" example-value='"ui-icon-gear"'>
+			<desc>
+				<p>Icon to display, with or without text (see <a href="#option-showLabel"><code>showLabel</code></a> option). By default, the icon is displayed on the left of the label text. The positioning can be controlled using the <a href="#option-iconPosition"><code>iconPosition</code></a> option.</p>
+				<p>The value for this option must match <a href="/theming/icons/">an icon class name</a>, e.g., <code>"ui-icon-gear"</code>.</p>
+				<p>When using an input of type button, submit or reset, icons are not supported.</p>
+			</desc>
+			<type name="String" />
+		</option>
+		<option name="iconPosition" default='"beginning"' example-value='"end"'>
+			<desc>
+				<p>Where to display the <a href="#option-icon"><code>icon</code></a>: Valid values are "beginning", "end", "top" and "bottom". In a left-to-right (LTR) display, "beginning" refers to the left, in a right-to-left (RTL, e.g. in Hebrew or Arabic), it refers to the right.</p>
+			</desc>
+			<type name="String" />
+		</option>
+		<option name="label" default="null" example-value='"custom label"'>
+			<desc>
+				<p>HTML to show in the button. When not specified (<code>null</code>), the element's HTML content is used, or its <code>value</code> attribute if the element is an input element of type submit or reset, or the HTML content of the associated label element if the element is an input of type radio or checkbox.</p>
+				<p>When using an input of type button, submit or reset, support is limited to plain text labels.</p>
+			</desc>
+			<type name="String" />
+		</option>
+		<option name="showLabel" default="true" example-value="false">
+			<desc>Whether to show the label. When set to <code>false</code> no text will be displayed, but the <a href="#option-icon"><code>icon</code></a> option must be used, otherwise the <code>showLabel</code> option will be ignored.</desc>
+			<type name="Boolean" />
+		</option>
+	</options>
+	<events>
+		<xi:include href="../includes/widget-event-create.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	</events>
+	<methods>
+		<xi:include href="../includes/widget-method-destroy.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<xi:include href="../includes/widget-method-disable.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<xi:include href="../includes/widget-method-enable.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<method name="refresh">
+			<desc>Refreshes the visual state of the button. Useful for updating button state after the native element's disabled state is changed programmatically.</desc>
+		</method>
+		<xi:include href="../includes/widget-method-instance.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<xi:include href="../includes/widget-method-option.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+		<xi:include href="../includes/widget-method-widget.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	</methods>
+	<example>
+		<height>100</height>
+		<desc>A simple jQuery UI Button</desc>
+		<code><![CDATA[
+$( "button" ).button();
+]]></code>
+		<html><![CDATA[
+<button>Button label</button>
+]]></html>
+	</example>
+	<category slug="widgets"/>
+</entry>

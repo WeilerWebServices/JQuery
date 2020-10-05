@@ -1,0 +1,24 @@
+{
+	"category": [
+		{
+			"slug": "uncategorized",
+			"name": "Uncategorized"
+		},
+		{
+			"slug": "interactions",
+			"name": "Interactions"
+		},
+		{
+			"slug": "widgets",
+			"name": "Widgets"
+		},
+		{
+			"slug": "effects",
+			"name": "Effects"
+		},
+		{
+			"slug": "utilities",
+			"name": "Utilities"
+		}
+	]
+}
